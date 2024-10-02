@@ -1,0 +1,6 @@
+name: Tools and fix bugs
+version: 1.0.0
+api: [3.25.0-3.25.5]
+description: I useful tool plugin and some bug fixes
+main: aimt1_tools/Main
+author: aimt1
