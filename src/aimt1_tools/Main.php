@@ -1,10 +1,10 @@
 <?php
-namespace YourNamespace;
+namespace aimt1_tools;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
-class YourPluginClass extends PluginBase {
+class Main extends PluginBase {
     private $config;
 
     public function onEnable() {
