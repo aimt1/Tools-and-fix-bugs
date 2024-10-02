@@ -13,6 +13,7 @@ class Main extends PluginBase {
     private Config $config;
 
     public function onEnable() {
+      try {
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
         $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
@@ -23,6 +24,10 @@ class Main extends PluginBase {
                 $this->getLogger()->debug("Successfully loaded §6{$levelName}");
             }
         }
+      } catch (\Exception $e) {
+        // Обрабатываем ошибку, записываем в лог, но сервер не отключается
+        $this->getLogger()->error("An error occurred: " . $e->getMessage());
+      }
     }
 
     public function getConfigValue(string $key) {
